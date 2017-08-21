@@ -41,7 +41,7 @@ def samele_wise_normalization(data):
     """
     normalize each sample to 0-1
     Input:
-        sample
+        sample image
     Output:
         Normalized sample
     x=1.0*(x-np.min(x))/(np.max(x)-np.min(x))
@@ -74,3 +74,19 @@ def random_flip(image,lr,ud):
         if np.random.random()>0.5:
             image=cv2.flip(image,flipCode=0)
     return image
+
+def image_crop(image,crop=None):
+    """
+    input:
+        image: image np.ndarray [H,W,C]
+        crop: [target_height,target_width]
+    output:
+        croped image with shape[crop[0],crop[1],C]
+    """
+    hei, wid, _ = image.shape
+    if crop is None:
+        crop = (np.random.randint(int(hei / 2), int(3 * hei / 4)),
+                np.random.randint(int(wid / 2), int(3 * wid / 4)))
+    th, tw = [int(round(x / 2)) for x in crop]
+    return image[th:th + crop[0], tw:tw + crop[0]]
+    
