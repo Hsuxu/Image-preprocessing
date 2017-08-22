@@ -3,7 +3,7 @@ setup(
     name="image_preprocess",
     version="0.1.0",
     packages=find_packages(),
-    scripts=['preprocessing.py'],
+    scripts=['src/preprocessing.py'],
 
     # Project uses reStructuredText, so ensure that the docutils get
     # installed or upgraded on the target machine
