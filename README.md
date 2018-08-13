@@ -1,7 +1,11 @@
 # Requirements
-pip install numpy,opencv-python
+```Bash
+pip install numpy
+pip install opencv-python
+```
 # Image-preprocessing
 This a python image data augmentation library for deep learning for persenal use
 installation:
 ```Bash
 python setup.py install
+```
